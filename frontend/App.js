@@ -98,7 +98,7 @@ try {
           intento: intentoActual
         }),
       });
-      
+
       const data = await response.json();
 
       if (response.ok && data.recetas && data.recetas.length > 0) {
@@ -519,3 +519,4 @@ const styles = StyleSheet.create({
   textoAccion: { flex: 1, fontSize: 13, lineHeight: 19, color: "#334155" },
   textoAccionTachada: { textDecorationLine: "line-through", color: "#94A3B8" }
 });
+
