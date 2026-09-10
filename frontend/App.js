@@ -85,12 +85,11 @@ export default function App() {
     setAccionesCompletadas({});
     setPantallaActual("resultados");
 
-    try {
-      const response = await fetch("https://juicy-profound-headache.ngrok-free.dev/api/recetas", {
+try {
+      const response = await fetch("https://chiu-backend-1400.onrender.com/api/recetas", {
         method: "POST",
         headers: { 
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true" // <--- Esto evita bloqueos de seguridad de Ngrok
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           ingredientes: listaIngredientes,
@@ -99,7 +98,7 @@ export default function App() {
           intento: intentoActual
         }),
       });
-
+      
       const data = await response.json();
 
       if (response.ok && data.recetas && data.recetas.length > 0) {
